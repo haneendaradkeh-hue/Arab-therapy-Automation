@@ -1,0 +1,37 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://stg.arabtherapy.com/ar');
+  await page.getByText('ابدأ الآن إنشاء حساب').click();
+  await page.getByTestId('therapist-type-1').click();
+  await page.getByTestId('slide-what-brought-you').getByText('الاكتئاب').click();
+  await page.getByTestId('what-brought-you-next-btn').click();
+  await page.getByText('إرهاق وتعب مزمن').click();
+  await page.getByTestId('recently-symptoms-next-btn').click();
+  await page.getByTestId('have-treatment-before-1').click();
+  await page.getByTestId('psychiatric-medications-1').click();
+  await page.getByTestId('age-input').click();
+  await page.getByTestId('age-input').fill('10');
+  await page.getByTestId('age-next-btn').click();
+  await page.getByTestId('gender-1').click();
+  await page.getByTestId('country-id-autocomplete').click();
+  await page.getByTestId('country-option-jordan').click();
+  await page.getByTestId('country-id-next-btn').click();
+  await page.getByTestId('preferred-therapist-gender-1').click();
+  await page.getByTestId('are-you-religious-2').click();
+  await page.getByTestId('family-history-of-psychological-problems-1').click();
+  await page.getByTestId('suffer-physical-health-problems-1').click();
+  await page.getByTestId('patient-preferred-contact-method-1').click();
+  await page.getByTestId('how-did-you-hear-about-us-2').click();
+  await page.locator('div').filter({ hasText: /^الاسم الأول$/ }).nth(3).click();
+  await page.getByTestId('register-first-name').fill('yeyeye');
+  await page.getByTestId('register-last-name').click();
+  await page.getByTestId('register-last-name').fill('fgfgrttrf');
+  await page.getByTestId('register-email').click();
+  await page.getByTestId('register-email').fill('testdfdfd3@sd.dfg');
+  await page.getByTestId('register-password').click();
+  await page.getByTestId('register-password').fill('123456');
+  await page.locator('.v-input--selection-controls__ripple').click();
+  await page.getByTestId('register-submit').click();
+    await page.waitForTimeout(10000);
+});

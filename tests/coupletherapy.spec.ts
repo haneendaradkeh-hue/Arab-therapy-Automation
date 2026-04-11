@@ -1,0 +1,33 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://stg.arabtherapy.com/ar');
+  await page.getByText('ابدأ الآن إنشاء حساب').click();
+  await page.getByTestId('therapist-type-2').click();
+  await page.getByTestId('prefer-to-attend-the-sessions-together-3').click();
+  await page.getByTestId('relationship-status-2').click();
+  await page.getByTestId('current-relationship-duration-3').click();
+  await page.getByTestId('who-requested-the-therapy-2').click();
+  await page.getByText('مشاكل مالية').click();
+  await page.getByTestId('main-challenges-next-btn').click();
+  await page.getByTestId('previously-sought-couples-therapy-2').click();
+  await page.getByText('حل مشكلة محددة').click();
+  await page.getByTestId('main-goal-couples-therapy-next-btn').click();
+  await page.getByTestId('preferred-therapist-gender-1').click();
+  await page.getByTestId('country-id-autocomplete').click();
+  await page.getByTestId('country-option-jordan').click();
+  await page.getByTestId('country-id-next-btn').click();
+  await page.getByTestId('how-did-you-hear-about-us-2').click();
+  await page.getByTestId('patient-preferred-contact-method-2').click();
+  await page.getByTestId('register-first-name').click();
+  await page.getByTestId('register-first-name').fill('haneen');
+  await page.getByTestId('register-last-name').click();
+  await page.getByTestId('register-last-name').fill('adel');
+  await page.getByTestId('register-email').click();
+  await page.getByTestId('register-email').fill('hansdfsdsddskf@w.nwgg');
+  await page.getByTestId('register-password').click();
+  await page.getByTestId('register-password').fill('123456');
+  await page.locator('.v-input--selection-controls__ripple').click();
+  await page.getByTestId('register-submit').click();
+  await page.waitForTimeout(10000);
+});

@@ -1,0 +1,30 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.getByTestId('header-questionnaire-btn').click();
+  await page.getByTestId('therapist-type-1').click();
+  await page.getByTestId('slide-what-brought-you').getByText('الاكتئاب').click();
+  await page.getByTestId('what-brought-you-next-btn').click();
+  await page.getByText('فقدان الرغبة بالاستمتاع بأي شيء').click();
+  await page.locator('#slide-recently-symptoms > .slide-body > .multi-select-list > div:nth-child(7) > .v-input__control > .v-input__slot > .v-input--selection-controls__input > .v-input--selection-controls__ripple').click();
+  await page.getByTestId('recently-symptoms-next-btn').click();
+  await page.getByTestId('have-treatment-before-1').click();
+  await page.getByTestId('psychiatric-medications-1').click();
+  await page.getByTestId('age-input').click();
+  await page.getByTestId('age-input').fill('2');
+  await page.getByTestId('age-next-btn').click();
+  await page.getByTestId('gender-1').click();
+  await page.getByTestId('country-id-autocomplete').click();
+  await page.getByTestId('country-option-jordan').click();
+  await page.getByTestId('country-id-next-btn').click();
+  await page.getByTestId('preferred-therapist-gender-1').click();
+  await page.getByTestId('are-you-religious-1').click();
+  await page.getByTestId('family-history-of-psychological-problems-2').click();
+  await page.getByTestId('suffer-physical-health-problems-1').click();
+  await page.getByTestId('patient-preferred-contact-method-2').click();
+  await page.getByTestId('how-did-you-hear-about-us-1').click();
+  await page.getByTestId('register-first-name').click();
+  await page.getByTestId('register-first-name').fill('haneen');
+  await page.getByTestId('register-last-name').click();
+  await page.getByTestId('register-last-name').fill('ffff');
+});
